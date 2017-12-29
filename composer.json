@@ -1,0 +1,28 @@
+{
+    "name": "lifeboy/station",
+    "description": "Laravel 5: Backend UI for Content, User and Media Management",
+    "version": "0.2.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ben Hirsch",
+            "email": "ben@lifeboytech.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~5.0",
+        "laravelcollective/html": ">=5.2.0",
+        "laracasts/generators": "dev-master"
+    },
+    "autoload": {
+        "classmap": [
+            "src/controllers",
+            "src/seeds"
+        ],
+        "psr-0": {
+            "Lifeboy\\Station": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
