@@ -9,7 +9,7 @@ class StationConfig {
 		$key = $key != '' ? '.'.$key : '';
 		$is_vendor = self::is_vendor();
 		$namespace = $is_vendor ? 'station_vendor_config' : 'station';
-		$prefix = 'packages.lifeboy.station._app';
+		$prefix = 'packages.whereyart.station-yart5._app';
 		return config($is_vendor ? $prefix.$key : $namespace.'::'.$prefix.$key);
 	}
 
@@ -25,7 +25,7 @@ class StationConfig {
 
 		$is_vendor = self::is_vendor();
 		$namespace = $is_vendor ? 'station_vendor_config' : 'station';
-		$prefix = 'packages.lifeboy.station.';
+		$prefix = 'packages.whereyart.station-yart5.';
 		
 		return Config::get($is_vendor ? $prefix.$panel_name : $namespace.'::'.$prefix.$panel_name);
 	}
