@@ -283,8 +283,10 @@ class Panel {
 
         $panel = $this->user_scope($panel_name, 'L', $subpanel_parent);
 
-        if (isset($panel['config']['panel_options']['override']) && $panel['config']['panel_options']['override']) return $panel;
+        // if (isset($panel['config']['panel_options']['override']) && $panel['config']['panel_options']['override']) return $panel;
         if (!$panel) return FALSE;
+
+        if(!isset($panel['config']['panel_options']['table']) || is_string($panel['config']['panel_options']['table'])) {
 
         $model_name                = $this->model_name_for($panel_name);
         $table_name                = $panel['config']['panel_options']['table'];
@@ -321,6 +323,13 @@ class Panel {
         }
 
         if ($is_filtered) $panel['data'] = $this->run_pivot_filters($panel, $user_filters);
+
+        }else {
+            $panel['data'] = [];
+            $panel['user_filters'] = [];
+            $panel['has_user_filters'] = false;
+        }
+
 
         return $panel;
     }
@@ -394,7 +403,7 @@ class Panel {
             
             default:
                 $name = ucwords(str_singular($panel_name));
-                return $no_path ? $name : '\App\Models\\'.$name;
+                return $no_path ? $name : '\App\\'.$name;
                 break;
         }
     }
