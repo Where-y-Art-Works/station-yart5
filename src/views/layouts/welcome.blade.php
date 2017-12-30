@@ -13,7 +13,7 @@
 	</p>
 
 	<p>
-		The next thing you should do is configure your <strong>/config/packages/lifeboy/station/_app.php</strong> file and begin to create individual "panel" files. Each panel appears in Station's navigation bar and is an area where your users can control data or content.
+		The next thing you should do is configure your <strong>/config/packages/whereyart/station-yart5/_app.php</strong> file and begin to create individual "panel" files. Each panel appears in Station's navigation bar and is an area where your users can control data or content.
 	</p>
 
 	<p>

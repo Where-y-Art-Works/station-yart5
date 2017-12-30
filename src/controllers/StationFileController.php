@@ -261,7 +261,7 @@ class StationFileController extends BaseController {
 
 			$success         = TRUE;
 			$message         = 'File sent to S3';
-			$preview_uri     = '/public/packages/lifeboy/station/img/file.png';
+			$preview_uri     = '/public/packages/whereyart/station-yart5/img/file.png';
 			$final_file_name = $new_file_name;
 			$file_type 		 = 'file';
 			$complete_uri 	 = 'http://'.$app_config['media_options']['AWS']['bucket'].'.s3.amazonaws.com/'.$target_directory.'/'.$new_file_name;
