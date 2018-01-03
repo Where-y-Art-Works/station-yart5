@@ -40,7 +40,7 @@ class Panel {
         $records      = $data['data'];
         $ret          = FALSE;
 
-        if (count($records) > 1){
+        if (!is_null($records) && count($records) > 1){
 
             $first_record = current($records);
             $final_record = end($records);
