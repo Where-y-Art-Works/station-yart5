@@ -421,7 +421,7 @@ class StationPanelController extends BaseController {
 
 		$this->init($panel_name, 'L');
 
-		$raw_count 					= $panel->get_data_for($panel_name, TRUE, FALSE, FALSE, FALSE, TRUE);
+		$raw_count 					= $panel->get_data_for($panel_name, TRUE);
 		$raw_count 					= isset($raw_count['data']) ? $raw_count['data'] : 0;
 		$is_trying_to_filter 		= isset($panel_data['has_user_filters']) ? $panel_data['has_user_filters'] : FALSE;
 		$panel_options				= $this->panel_config['panel_options'];
