@@ -332,5 +332,26 @@
 		@include('station::partials.deleter')
 
 	</div>
+
+	@if(isset($status_based))
+		<input type="hidden" id="current-status">
+		<script>
+			var current_status = jQuery("#station-{{$status_based['status_field']}}").val();
+			var after_save_button = jQuery("button[name='after_save']");
+			jQuery("#current-status").val(current_status);
+
+			jQuery("#station-{{$status_based['status_field']}}").change(function(){
+				if(jQuery(this).val() != current_status){
+					after_save_button.addClass("disabled");
+					after_save_button.attr("disabled", true);
+				}else{
+					after_save_button.removeClass("disabled");
+					after_save_button.attr("disabled", false);
+				}
+
+			});
+		</script>
+	@endif
+	
 	
 @stop

@@ -766,6 +766,10 @@ class StationPanelController extends BaseController {
 		{
 			View::share('button_override',$panel_data['config']['panel_options']['button_override'][$method]);
 		}
+
+		if(isset($panel_data['config']['panel_options']['status_based'])){
+			View::share('status_based', $panel_data['config']['panel_options']['status_based']);
+		}
 		
 		if ($this->request->ajax()) return $this->render_ajax($template, $panel_data, $method);
 
