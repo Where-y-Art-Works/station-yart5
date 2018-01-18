@@ -188,7 +188,12 @@ class StationPanelController extends BaseController {
 				$override_controller 	= $temp[0];
 				$override_method 		= $temp[1];
 
-				App::make($override_controller)->$override_method($id);
+				foreach ($ids_arr as $id) {
+					
+					App::make($override_controller)->$override_method($id);
+					
+				}
+
 			}
 
 			
