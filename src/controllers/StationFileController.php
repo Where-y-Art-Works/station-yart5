@@ -204,7 +204,7 @@ class StationFileController extends BaseController {
 	public function upload()
 	{
 
-		if (!$this->request->hasFile('uploaded_file')) echo json_encode(['success' => FALSE, 'reason' => 'no file uploaded']);
+		if (!$this->request->hasFile('uploaded_file')) return json_encode(['success' => FALSE, 'reason' => 'no file uploaded']);
 
 		$file						= $this->request->file('uploaded_file');
 		$original_file_name			= $file->getClientOriginalName();
