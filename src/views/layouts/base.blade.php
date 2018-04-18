@@ -26,7 +26,6 @@
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/bootstrap.min.js"></script>
     <script src="/packages/whereyart/station-yart5/js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/jquery.ui.touch-punch.min.js"></script>
-    <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/bootstrap.min.js"></script>
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/bootstrap-select.js"></script>
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/bootstrap-switch.js"></script>
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/flatui-checkbox.js"></script>
