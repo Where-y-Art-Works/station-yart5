@@ -475,6 +475,7 @@ class Panel {
 
         $old_item = $model::find($id);
         $old_item::unguard();
+        $config = StationConfig::panel($panel_name);
         //if boolean item from request is not present agragate it as false
         if(array_key_exists('elements', $config)){
                 foreach ($config['elements'] as $name => $element) {
