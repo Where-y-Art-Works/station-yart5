@@ -352,6 +352,16 @@
 			});
 		</script>
 	@endif
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+	<script>
+        var textareas = document.getElementsByTagName("textarea")
+        for (var i = 0; i < textareas.length; i++) {
+            textareas[i].className += 'summernote';
+        }
+        $(document).ready(function() {
+            $('.summernote').summernote();
+        });
+	</script>
 	
 	
 @stop
