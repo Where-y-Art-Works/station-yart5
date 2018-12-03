@@ -402,6 +402,15 @@ class Panel {
                 break;
             
             default:
+
+                $prefix = "packages.whereyart.station-yart5";
+
+                $specified_name = config($prefix.'.'.$panel_name.'.panel_options.model');
+
+                if($specified_name){
+                    return $specified_name;
+                }
+
                 $name = ucwords(str_singular($panel_name));
                 return $no_path ? $name : '\App\\'.$name;
                 break;
