@@ -475,7 +475,23 @@ class Panel {
 
         $old_item = $model::find($id);
         $old_item::unguard();
+        $config = StationConfig::panel($panel_name);
+        //if boolean item from request is not present agragate it as false
         $old_item->fill($data);
+
+        if(array_key_exists('elements', $config)){
+                foreach ($config['elements'] as $name => $element) {
+                    if($element['type'] == 'boolean'){
+
+                        if(!request()->filled($name)){
+                            $old_item->{$name} = false;
+                        }else{
+                            $old_item->{$name} = boolval(request()->input($name));
+                        }
+
+                    }
+                }
+        }
         $old_item->save();
 
         $this->attach_joins($old_item, $user_scope);

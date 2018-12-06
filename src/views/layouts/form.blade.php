@@ -25,6 +25,7 @@
 
 	$needs_media = FALSE;
 	$has_markdown = FALSE;
+	$user = \Illuminate\Support\Facades\Auth::user();
 ?>
 
 @extends('station::layouts.base')
@@ -352,6 +353,29 @@
 			});
 		</script>
 	@endif
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+	<script>
+        @if($user->isAdmin())
+			$(document).ready(function() {
+				$('.station-form textarea').summernote({
+					minHeight: 200,
+					toolbar: [
+						['style', ['link', 'bold', 'italic']],
+
+					]
+				});
+			});
+		@else
+			$(document).ready(function() {
+				$('.station-form textarea').summernote({
+					minHeight: 200,
+					toolbar: [
+						['style', ['link']],
+					]
+				});
+			});
+		@endif
+	</script>
 	
 	
 @stop

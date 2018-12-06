@@ -26,7 +26,6 @@
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/bootstrap.min.js"></script>
     <script src="/packages/whereyart/station-yart5/js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/jquery.ui.touch-punch.min.js"></script>
-    <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/bootstrap.min.js"></script>
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/bootstrap-select.js"></script>
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/bootstrap-switch.js"></script>
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/flatui-checkbox.js"></script>
@@ -35,6 +34,7 @@
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/jquery.placeholder.js"></script>
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/application.js"></script>
     <script src="/packages/whereyart/station-yart5/js/station_application.js?v2"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
