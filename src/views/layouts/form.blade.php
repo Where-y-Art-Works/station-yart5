@@ -367,10 +367,17 @@
 			});
 		@else
 			$(document).ready(function() {
-				$('.station-form textarea').summernote({
+				$('.station-form textarea').not('#station-faq').summernote({
 					minHeight: 200,
 					toolbar: [
 						['style', ['link']],
+
+					]
+				});
+				$('#station-faq').summernote({
+					minHeight: 200,
+					toolbar: [
+						['style', ['link', 'bold', 'italic']],
 					]
 				});
 			});
