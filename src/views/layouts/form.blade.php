@@ -362,7 +362,14 @@
 					toolbar: [
 						['style', ['link', 'bold', 'italic']],
 
-					]
+					],
+					callbacks: {
+						onPaste: function (e) {
+							var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+							e.preventDefault();
+							document.execCommand('insertText', false, bufferText);
+						}
+					}
 				});
 			});
 		@else
@@ -372,13 +379,27 @@
 					toolbar: [
 						['style', ['link']],
 
-					]
+					],
+					callbacks: {
+						onPaste: function (e) {
+							var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+							e.preventDefault();
+							document.execCommand('insertText', false, bufferText);
+						}
+					}
 				});
 				$('#station-faq').summernote({
 					minHeight: 200,
 					toolbar: [
 						['style', ['link', 'bold', 'italic']],
-					]
+					],
+					callbacks: {
+						onPaste: function (e) {
+							var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+							e.preventDefault();
+							document.execCommand('insertText', false, bufferText);
+						}
+					}
 				});
 			});
 		@endif
