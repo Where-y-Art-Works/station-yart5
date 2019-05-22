@@ -298,9 +298,19 @@ class Panel {
         $where_clause              = $this->where_clause_for($panel); 
         $joins                     = $this->joins_for($panel); 
         $user_filters              = $is_filtered ? $this->user_filters_for($panel_name) : array();
-        $order_by                  = $this->order_by_clause_for($panel, $user_filters); 
+        $order_by                  = $this->order_by_clause_for($panel, $user_filters);
+        $scopes                    = $this->scopes_for($panel);
+
+
 
         $query                     = $model::select($fields_for_select); 
+        
+        if($scopes){
+            foreach ($scopes as $scope) {
+                $query = $query->{$scope}();
+            }
+        }
+        
         $query                     = $where_clause ? $query->whereRaw($where_clause) : $query;
         $query                     = $keyword ? $query->whereRaw($primary_element." LIKE '%".addslashes($keyword)."%'") : $query;
         $query                     = $is_filtered ? $this->apply_joins_with_filters($joins, $user_filters, $query, $panel) : $query;
@@ -1298,6 +1308,24 @@ class Panel {
         }
 
         return FALSE;
+    }
+
+    private function scopes_for($panel){
+
+        if (isset($panel['config']['panel_options']['scopes']) && $panel['config']['panel_options']['scopes'] != '') {
+            
+            if (Session::get('user_data')){
+
+                return $this->inject_vars($panel['config']['panel_options']['scopes']);
+
+            } else {
+
+                return $panel['config']['panel_options']['scopes'];
+            }
+        }
+
+        return FALSE;
+
     }
 
     /**
