@@ -25,6 +25,7 @@
 
 	$needs_media = FALSE;
 	$has_markdown = FALSE;
+	$user = \Illuminate\Support\Facades\Auth::user();
 ?>
 
 @extends('station::layouts.base')
@@ -354,11 +355,54 @@
 	@endif
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
 	<script>
-        $(document).ready(function() {
-            $('.station-form textarea').summernote({
-				minHeight: 200
+        @if($user->isAdmin())
+			$(document).ready(function() {
+				$('.station-form textarea').summernote({
+					minHeight: 200,
+					toolbar: [
+						['style', ['link', 'bold', 'italic']],
+
+					],
+					callbacks: {
+						onPaste: function (e) {
+							var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+							e.preventDefault();
+							document.execCommand('insertText', false, bufferText);
+						}
+					}
+				});
 			});
-        });
+		@else
+			$(document).ready(function() {
+				$('.station-form textarea').not('#station-faq').summernote({
+					minHeight: 200,
+					toolbar: [
+						['style', ['link']],
+
+					],
+					callbacks: {
+						onPaste: function (e) {
+							var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+							e.preventDefault();
+							document.execCommand('insertText', false, bufferText);
+						}
+					}
+				});
+				$('#station-faq').summernote({
+					minHeight: 200,
+					toolbar: [
+						['style', ['link', 'bold', 'italic']],
+					],
+					callbacks: {
+						onPaste: function (e) {
+							var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+							e.preventDefault();
+							document.execCommand('insertText', false, bufferText);
+						}
+					}
+				});
+			});
+		@endif
 	</script>
 	
 	
