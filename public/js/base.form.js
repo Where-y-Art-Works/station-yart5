@@ -123,7 +123,7 @@ $(document).ready(function() {
 
             //display image
             var $parts = $('#target-'+$elem_name).attr('src').split('/station_thumbs_sm/');
-            var src = $('#target-'+$elem_name).hasClass('for-file') ? '/packages/lifeboy/station/img/file.png' : $parts[0] + '/station_thumbs_lg/' + $parts[1];
+            var src = $('#target-'+$elem_name).hasClass('for-file') ? '/packages/whereyart/station-yart5/img/file.png' : $parts[0] + '/station_thumbs_lg/' + $parts[1];
             $('#station-fileupload-hud').html('<img data-src="' + $parts[0] + '/station_thumbs_lg/' + $parts[1] + '" src="' + src + '">');
 
             // loading text for controls
@@ -167,7 +167,7 @@ $(document).ready(function() {
 
         if ($('#target-'+$elem_name).hasClass('for-file')){
 
-            var src = '/packages/lifeboy/station/img/file.png';
+            var src = '/packages/whereyart/station-yart5/img/file.png';
 
         } else {
 
@@ -210,7 +210,7 @@ $(document).ready(function() {
                         // we display the thumb
                         var $elem_name = $('#mediaModal [name="upload_element_name"]').val();
 
-                        var src = $('#target-' + $elem_name).hasClass('for-file') ? '/packages/lifeboy/station/img/file.png' : $results.file_uri_stub+'station_thumbs_lg/'+$results.file_name
+                        var src = $('#target-' + $elem_name).hasClass('for-file') ? '/packages/whereyart/station-yart5/img/file.png' : $results.file_uri_stub+'station_thumbs_lg/'+$results.file_name
                         $('#station-fileupload-hud').html('<img data-src="' + $results.file_uri_stub+'station_thumbs_lg/'+$results.file_name + '" src="'+ src +'">');
 
                         $('.embedder-snippet').remove();
@@ -247,7 +247,7 @@ $(document).ready(function() {
 
         // we need the img filename and the uri
         var $parts = $('#station-fileupload-hud').children(':first').data('src').split('/station_thumbs_lg/');
-        var src = $('#target-'+$elem_name).hasClass('for-file') ? '/packages/lifeboy/station/img/file.png' : $parts[0]+'/station_thumbs_sm/' + $parts[1];
+        var src = $('#target-'+$elem_name).hasClass('for-file') ? '/packages/whereyart/station-yart5/img/file.png' : $parts[0]+'/station_thumbs_sm/' + $parts[1];
         $('#target-'+$elem_name).attr('src', src).show();
         
         if ($('[name='+$elem_name+']').is('textarea')){ // using the embedder tool
@@ -269,7 +269,7 @@ $(document).ready(function() {
         var element_name = parent.attr('data-element-name');
         $('input[name="' + element_name + '"]').val('');
         parent.find('#edit_for_' + element_name + ', #remove_for_' + element_name).hide();
-        parent.find('#target-' + element_name).attr('src', '/packages/lifeboy/station/img/missing.gif');
+        parent.find('#target-' + element_name).attr('src', '/packages/whereyart/station-yart5/img/missing.gif');
         return false;
     });
 
@@ -450,11 +450,11 @@ $(document).ready(function() {
 
                 } else if (typeof parts.graph != 'undefined' && typeof parts.graph[index] != 'undefined' && for_file) {
 
-                    var src = '/packages/lifeboy/station/img/file.png';
+                    var src = '/packages/whereyart/station-yart5/img/file.png';
 
                 } else {
 
-                    var src = '/packages/lifeboy/station/img/missing.gif';
+                    var src = '/packages/whereyart/station-yart5/img/missing.gif';
                 }
 
                 thumbnail.attr('src', src);
@@ -653,7 +653,7 @@ $(document).ready(function() {
 
         if ($('.embedder-btn').length){
 
-            var clip = new ZeroClipboard($('.embedder-btn'), { moviePath: "/packages/lifeboy/station/js/zeroclipboard-1.3.5/ZeroClipboard.swf" });
+            var clip = new ZeroClipboard($('.embedder-btn'), { moviePath: "/packages/whereyart/station-yart5/js/zeroclipboard-1.3.5/ZeroClipboard.swf" });
 
             clip.on( 'complete', function(client, args) {
 
