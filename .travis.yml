@@ -7,7 +7,7 @@ before_script:
   - curl -sS https://getcomposer.org/installer | php -- --1
   - php composer.phar install
 
-install:
+before_install:
   - phpenv config-add travis.php.ini
   - php -ini | grep memory_limit
 
