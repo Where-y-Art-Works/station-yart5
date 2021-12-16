@@ -35,6 +35,7 @@
     <script src="/packages/whereyart/station-yart5/Flat-UI-Pro-1.2.2/js/application.js"></script>
     <script src="/packages/whereyart/station-yart5/js/station_application.js?v2"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -67,14 +68,24 @@
     @if(Auth::check())
     
       <div class="container">
-        <div class="row">
-          <div class="mobile-menu">
-            <div class="nav-opener"><span class="glyphicon glyphicon-align-justify"></span></div>
-          </div>
-          <div id="sidebar-container" class="col-sm-2">
-            @include('station::layouts.sidebar')
-          </div>
-          <div id="content-container" class="col-sm-10">
+          <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MobileNav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="MobileNav">
+              <div id="sidebar-container">
+                @include('station::layouts.sidebar')
+              </div>
+            </div>
+          </nav>
+          <div id="content-container">
             <div class="row">
               <div class="col-sm-12">
                 {{-- for showing flashes via ajax responses --}}
@@ -88,8 +99,6 @@
                 @yield('content')
               </div>
             </div>
-            
-          </div>
         </div>
       </div>
 
@@ -103,7 +112,6 @@
           </div>
         </div>
       </div>
-
       <div class="text-center">
           Have an Account? &nbsp; <a href="{{ '/'.$app_data['root_uri_segment'].'/login' }}">Login Here</a>
       </div>
