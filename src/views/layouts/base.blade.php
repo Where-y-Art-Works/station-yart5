@@ -78,6 +78,9 @@
                 <span class="icon-bar"></span>
               </button>
             </div>
+            <a class="navbar-brand" href="/">
+              <img class="custom-logo" src="/images/whereyart-logo-light.svg" alt="Where Y’Art Works – Shaping Place Through Art">
+            </a>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="MobileNav">
               <div id="sidebar-container">
