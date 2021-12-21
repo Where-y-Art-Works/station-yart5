@@ -1,9 +1,5 @@
 <ul class="nav nav-list nav-list-vivid" id="sidebar">
 
-	<li id="station-branding">
-		<a href="/">{{ $app_data['name'] }}</a>
-	</li>
-
 	<li class="nav-user-control">
         <a href="/{{ $app_data['root_uri_segment'] }}/panel/my_account/update/{{ $user_data['id'] }}" class="pull-left">
           <img class="gravatar" src="http://www.gravatar.com/avatar/{{ $user_data['gravatar_hash'] }}?s=30&d=identicon">&nbsp; 
