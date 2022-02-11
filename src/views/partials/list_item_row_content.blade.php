@@ -43,7 +43,7 @@
 		    @elseif ($elem_data['type'] == 'image')
 		      <?php $thumb_size = isset($elem_data['thumb_size']) ? $elem_data['thumb_size'] : '100' ?>
 		      @if ($row[$elem_name] != '')
-		        <img class="inline-thumb" style="width: {{ $thumb_size }}px; height: {{ $thumb_size }}px;" src="{{ 'https://cdn.whereyart.net/station_thumbs_sm/'.$row[$elem_name] }}" />             
+		        <img class="inline-thumb" style="width: {{ $thumb_size }}px; height: {{ $thumb_size }}px;" src="{{ 'https://cdn-whereyart.s3.amazonaws.com/station_thumbs_sm/'.$row[$elem_name] }}" />
 		      @else
 		        <img class="inline-thumb" style="width: {{ $thumb_size }}px; height: {{ $thumb_size }}px;" src="/packages/whereyart/station-yart5/img/missing.gif" />
 		      @endif
