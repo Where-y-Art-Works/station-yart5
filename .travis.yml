@@ -1,12 +1,10 @@
 language: php
 
 php: 
-  - 5.3
-  - 5.4
-  - 5.5
+  - 7.3
 
 before_script:
-  - curl -s http://getcomposer.org/installer | php
-  - php composer.phar install --dev
+  - curl -sS https://getcomposer.org/installer | php -- --1
+  - COMPOSER_MEMORY_LIMIT=-1 php composer.phar install
 
 script: phpunit
